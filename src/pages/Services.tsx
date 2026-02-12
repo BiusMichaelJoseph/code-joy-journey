@@ -11,10 +11,19 @@ const GOOGLE_FORM_URL = "#";
 
 const programs = [
   {
+    icon: Home,
+    title: "Homeschooling Support",
+    ages: "Ages 5–18",
+    desc: "Comprehensive homeschooling programmes fully aligned with the CBC (Competency-Based Curriculum) and Cambridge curricula. We provide structured, parent-friendly lesson plans so your child stays on track academically while learning at their own pace — at home or online.",
+    topics: ["CBC-aligned Digital Literacy & Coding", "Cambridge IGCSE & A-Level Computer Science", "Integrated STEM projects mapped to CBC competencies", "Cambridge Primary & Lower Secondary Computing", "Portfolio & competency assessment preparation"],
+    format: "Online, In-Person, or Hybrid",
+    includes: ["Curriculum-mapped lesson plans (CBC & Cambridge)", "Termly progress reports", "Parent dashboard & learning resources", "Community of homeschooling families"],
+  },
+  {
     icon: Code2,
     title: "Junior Coders",
     ages: "Ages 7–10",
-    desc: "Introduce your child to the world of coding through fun, interactive projects. Using visual programming tools, kids learn computational thinking, logic, and creativity.",
+    desc: "Introduce your child to the world of coding through fun, interactive projects. Using visual programming tools, kids learn computational thinking, logic, and creativity — with activities linked to CBC competencies.",
     topics: ["Scratch & Blockly", "Logic puzzles & games", "Animation & storytelling", "Basic problem solving"],
     format: "Online, In-Person, or Hybrid",
     includes: ["Completion certificate", "Project portfolio", "Community access"],
@@ -23,8 +32,8 @@ const programs = [
     icon: Laptop,
     title: "Teen Developers",
     ages: "Ages 11–17",
-    desc: "Prepare teens for the digital future with real programming languages and industry tools. From building websites to creating games, students gain practical skills.",
-    topics: ["Python programming", "HTML, CSS & JavaScript", "Game development (Unity/Roblox)", "Version control & collaboration"],
+    desc: "Prepare teens for the digital future with real programming languages and industry tools. Content supports both CBC and Cambridge CS pathways.",
+    topics: ["Python programming", "HTML, CSS & JavaScript", "Game development (Unity/Roblox)", "Cambridge IGCSE CS exam prep"],
     format: "Online, In-Person, or Hybrid",
     includes: ["Completion certificate", "GitHub portfolio", "Mentorship access"],
   },
@@ -50,16 +59,15 @@ const programs = [
     icon: UserCheck,
     title: "1-on-1 Tutoring",
     ages: "All Ages",
-    desc: "Personalized mentorship tailored to your specific goals. Whether it's school CS coursework, university projects, or personal learning goals.",
-    topics: ["Custom curriculum", "Exam preparation", "University project support", "Competition training"],
+    desc: "Personalized mentorship tailored to your specific goals — whether it's CBC Digital Literacy, Cambridge IGCSE Computer Science, or personal coding projects.",
+    topics: ["Custom curriculum (CBC or Cambridge)", "Exam preparation (KCSE, IGCSE, A-Level)", "University project support", "Competition training"],
     format: "Online",
     includes: ["Progress reports", "Flexible scheduling", "Dedicated mentor"],
   },
 ];
 
 const additionalPrograms = [
-  { icon: Home, title: "Homeschooling Support", desc: "Structured CS curriculum aligned with your homeschool schedule." },
-  { icon: FileText, title: "Exam Preparation", desc: "Targeted prep for KCSE, IGCSE, A-Level, and AP Computer Science exams." },
+  { icon: FileText, title: "Exam Preparation", desc: "Targeted prep for KCSE, Cambridge IGCSE, A-Level, and AP Computer Science exams." },
   { icon: Heart, title: "Special Needs Support", desc: "Adaptive teaching methods for learners with diverse needs." },
 ];
 
@@ -140,7 +148,7 @@ const Services = () => {
       <section className="bg-muted/50 py-16">
         <div className="container">
           <h2 className="mb-8 text-center text-3xl font-extrabold">Additional Programs</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 max-w-2xl mx-auto">
             {additionalPrograms.map((p) => (
               <Card key={p.title} className="h-full">
                 <CardContent className="p-6">
