@@ -27,11 +27,12 @@ const benefits = [
 ];
 
 const courses = [
+  { icon: BookOpen, title: "Homeschooling Support", ages: "Ages 5–18", desc: "CBC & Cambridge-aligned coding curriculum for homeschoolers", color: "bg-secondary/10 text-secondary" },
   { icon: Code2, title: "Junior Coders", ages: "Ages 7–10", desc: "Scratch, Blockly & logic games", color: "bg-primary/10 text-primary" },
-  { icon: Laptop, title: "Teen Developers", ages: "Ages 11–17", desc: "Python, Web Dev & Game Dev", color: "bg-secondary/10 text-secondary" },
-  { icon: GraduationCap, title: "Adult & Career Track", ages: "18+", desc: "Full-stack, Data Science & AI", color: "bg-accent/10 text-accent-foreground" },
-  { icon: Sparkles, title: "Holiday Bootcamps", ages: "All Ages", desc: "Intensive 1-week workshops", color: "bg-primary/10 text-primary" },
-  { icon: UserCheck, title: "1-on-1 Tutoring", ages: "All Ages", desc: "Personalized mentorship", color: "bg-secondary/10 text-secondary" },
+  { icon: Laptop, title: "Teen Developers", ages: "Ages 11–17", desc: "Python, Web Dev & Cambridge CS", color: "bg-accent/10 text-accent-foreground" },
+  { icon: GraduationCap, title: "Adult & Career Track", ages: "18+", desc: "Full-stack, Data Science & AI", color: "bg-primary/10 text-primary" },
+  { icon: Sparkles, title: "Holiday Bootcamps", ages: "All Ages", desc: "Intensive 1-week workshops", color: "bg-secondary/10 text-secondary" },
+  { icon: UserCheck, title: "1-on-1 Tutoring", ages: "All Ages", desc: "Personalized mentorship", color: "bg-accent/10 text-accent-foreground" },
 ];
 
 const steps = [
