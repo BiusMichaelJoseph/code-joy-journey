@@ -1,13 +1,189 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import Layout from "@/components/Layout";
+import {
+  Lightbulb,
+  Award,
+  Users,
+  Code2,
+  Laptop,
+  GraduationCap,
+  Sparkles,
+  UserCheck,
+  ClipboardList,
+  BookOpen,
+  ArrowRight,
+  Star,
+  Quote,
+} from "lucide-react";
+
+const GOOGLE_FORM_URL = "#";
+
+const benefits = [
+  { icon: Lightbulb, title: "Project-Based Learning", desc: "Students build real projects from day one" },
+  { icon: Award, title: "Certified Instructors", desc: "Learn from industry professionals" },
+  { icon: Users, title: "All Ages Welcome", desc: "Programs for ages 7 to adult" },
+];
+
+const courses = [
+  { icon: Code2, title: "Junior Coders", ages: "Ages 7–10", desc: "Scratch, Blockly & logic games", color: "bg-primary/10 text-primary" },
+  { icon: Laptop, title: "Teen Developers", ages: "Ages 11–17", desc: "Python, Web Dev & Game Dev", color: "bg-secondary/10 text-secondary" },
+  { icon: GraduationCap, title: "Adult & Career Track", ages: "18+", desc: "Full-stack, Data Science & AI", color: "bg-accent/10 text-accent-foreground" },
+  { icon: Sparkles, title: "Holiday Bootcamps", ages: "All Ages", desc: "Intensive 1-week workshops", color: "bg-primary/10 text-primary" },
+  { icon: UserCheck, title: "1-on-1 Tutoring", ages: "All Ages", desc: "Personalized mentorship", color: "bg-secondary/10 text-secondary" },
+];
+
+const steps = [
+  { num: "1", icon: ClipboardList, title: "Inquire", desc: "Fill out our quick enrollment form" },
+  { num: "2", icon: BookOpen, title: "Get Matched", desc: "We find the perfect program for you" },
+  { num: "3", icon: Sparkles, title: "Start Learning", desc: "Begin your coding journey!" },
+];
+
+const testimonials = [
+  { name: "Sarah M.", role: "Parent", quote: "My son went from zero coding knowledge to building his own games in just 3 months. The instructors are fantastic!" },
+  { name: "James K.", role: "Teen Student", quote: "I love the project-based approach. I actually built a website for my school club!" },
+  { name: "Grace N.", role: "Adult Learner", quote: "The career track bootcamp helped me transition into tech. Best investment I ever made." },
+];
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-20 md:py-28">
+        <div className="container text-center">
+          <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl animate-fade-in-up">
+            Unlock the Joy of Coding —{" "}
+            <span className="text-primary">From First Line to First Job</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+            Hands-on coding classes for kids, teens, and adults. Project-based learning, real-world skills, and a supportive community.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Button size="lg" asChild>
+              <Link to="/enroll">Enroll Your Child</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/services">Explore Courses</Link>
+            </Button>
+            <Button size="lg" variant="secondary" asChild>
+              <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                Book Free Consultation
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="border-y bg-muted/50 py-12">
+        <div className="container">
+          <div className="grid gap-8 md:grid-cols-3">
+            {benefits.map((b) => (
+              <div key={b.title} className="flex items-start gap-4 text-center md:text-left">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+                  <b.icon className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-heading font-bold">{b.title}</h3>
+                  <p className="text-sm text-muted-foreground">{b.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Course Categories */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold md:text-4xl">Our Programs</h2>
+            <p className="mt-3 text-muted-foreground">Find the perfect coding journey for every age and skill level</p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {courses.map((c) => (
+              <Link to="/services" key={c.title}>
+                <Card className="group h-full transition-all hover:shadow-lg hover:-translate-y-1">
+                  <CardContent className="p-6">
+                    <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${c.color}`}>
+                      <c.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="font-heading text-lg font-bold">{c.title}</h3>
+                    <p className="text-sm font-medium text-primary">{c.ages}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+                    <div className="mt-4 flex items-center text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                      Learn more <ArrowRight className="ml-1 h-4 w-4" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="bg-muted/50 py-16 md:py-24">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold md:text-4xl">What People Say</h2>
+            <p className="mt-3 text-muted-foreground">Hear from our students and parents</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <Card key={t.name} className="h-full">
+                <CardContent className="p-6">
+                  <Quote className="mb-3 h-8 w-8 text-primary/30" />
+                  <p className="text-muted-foreground">{t.quote}</p>
+                  <div className="mt-4 flex items-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                    ))}
+                  </div>
+                  <p className="mt-2 font-heading font-bold">{t.name}</p>
+                  <p className="text-sm text-muted-foreground">{t.role}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl font-extrabold md:text-4xl">How It Works</h2>
+            <p className="mt-3 text-muted-foreground">Getting started is easy — just 3 simple steps</p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {steps.map((s) => (
+              <div key={s.num} className="text-center">
+                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-extrabold text-primary-foreground">
+                  {s.num}
+                </div>
+                <h3 className="font-heading text-xl font-bold">{s.title}</h3>
+                <p className="mt-2 text-muted-foreground">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-primary py-16 text-primary-foreground">
+        <div className="container text-center">
+          <h2 className="text-3xl font-extrabold md:text-4xl">Ready to Start Your Coding Journey?</h2>
+          <p className="mx-auto mt-4 max-w-xl opacity-90">
+            Join hundreds of students already learning with Code Joy Academy. Enroll today and get matched with the perfect program.
+          </p>
+          <Button size="lg" variant="secondary" className="mt-8" asChild>
+            <Link to="/enroll">Enroll Your Child Today</Link>
+          </Button>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
