@@ -66,49 +66,47 @@ This project is built with:
 
 Open your [Lovable project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click **Share -> Publish**.
 
-### Option 2: Deploy as a standard Vite site (recommended if you want full hosting control)
+### Option 2: Deploy on Vercel (recommended)
 
-This app builds to static files, so you can host it on Netlify, Vercel, Cloudflare Pages, GitHub Pages, or any static host.
+This project is a Vite + React app and can be deployed directly to Vercel.
 
-1. Install dependencies and create a production build:
+#### 1) Push your code to GitHub
+
+Make sure your latest branch is pushed to a GitHub repository.
+
+#### 2) Import the repo in Vercel
+
+- Go to Vercel Dashboard -> **Add New...** -> **Project**
+- Select your GitHub repository
+- Keep the detected framework as **Vite**
+
+#### 3) Confirm build settings
+
+These settings are already configured in `vercel.json`:
+
+- **Install Command:** `npm install`
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+
+#### 4) Deploy
+
+Click **Deploy**. Vercel will build and publish your site.
+
+#### 5) SPA routing support (important)
+
+This app uses React Router, so direct links like `/about` or `/services` need fallback routing.
+The `vercel.json` rewrite rule handles this by serving `index.html` for app routes.
+
+#### 6) Custom domain (optional)
+
+In Vercel, open your project -> **Settings** -> **Domains** and add your domain.
+
+#### Local production check (optional)
 
 ```sh
 npm i
 npm run build
-```
-
-2. Verify the production build locally:
-
-```sh
 npm run preview
-```
-
-3. Deploy the generated `dist/` folder.
-
-#### Host settings (quick reference)
-
-- **Build command:** `npm run build`
-- **Publish directory:** `dist`
-- **Node version:** 18+ (20 recommended)
-
-#### Netlify (example)
-
-- New site -> Import from Git
-- Build command: `npm run build`
-- Publish directory: `dist`
-
-#### Vercel (example)
-
-- New Project -> Import Git repo
-- Framework preset: `Vite`
-- Build command: `npm run build`
-- Output directory: `dist`
-
-#### GitHub Pages (manual static deploy)
-
-```sh
-npm run build
-# then publish dist/ with your preferred Pages workflow/action
 ```
 
 ## Can I connect a custom domain to my Lovable project?
