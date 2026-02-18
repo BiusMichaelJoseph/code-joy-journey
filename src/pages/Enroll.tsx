@@ -62,7 +62,7 @@ const Enroll = () => {
                     </div>
                     <div>
                       <h4 className="font-heading font-bold">Email</h4>
-                      <p className="text-sm text-muted-foreground">hello@codejoyacademy.com</p>
+                      <p className="text-sm text-muted-foreground">info@codejoyacademy.com</p>
                     </div>
                   </div>
 
@@ -72,7 +72,7 @@ const Enroll = () => {
                     </div>
                     <div>
                       <h4 className="font-heading font-bold">Phone / WhatsApp</h4>
-                      <p className="text-sm text-muted-foreground">+254 712 345 678</p>
+                      <p className="text-sm text-muted-foreground">0743761460</p>
                     </div>
                   </div>
 
