@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { ExternalLink, Mail, Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 
 const GOOGLE_FORM_URL = "https://forms.gle/9MNzmp5XiKDK3hmJA";
@@ -8,6 +9,11 @@ const GOOGLE_FORM_URL = "https://forms.gle/9MNzmp5XiKDK3hmJA";
 const Enroll = () => {
   return (
     <Layout>
+      <SEO
+        title="Enroll in Code Joy Academy"
+        description="Start your enrollment with Code Joy Academy. Submit the quick form and our team will guide you to the right coding program."
+        path="/enroll"
+      />
       <section className="hero-shell py-16 md:py-24">
         <div className="container text-center">
           <h1 className="text-4xl font-extrabold md:text-5xl">Enroll Today</h1>

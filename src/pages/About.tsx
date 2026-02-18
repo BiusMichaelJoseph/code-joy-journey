@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Heart, Target, Shield, Users, Lightbulb, Award } from "lucide-react";
 
 const values = [
@@ -20,6 +21,11 @@ const team = [
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="About Code Joy Academy"
+        description="Learn about Code Joy Academy’s mission, teaching philosophy, and inclusive approach to coding education for every learner."
+        path="/about"
+      />
       <section className="hero-shell py-16 md:py-24">
         <div className="container text-center">
           <span className="inline-flex rounded-full border border-secondary/30 bg-secondary/10 px-4 py-1 text-sm font-semibold text-secondary">

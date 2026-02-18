@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import {
   Code2, Laptop, GraduationCap, Sparkles, UserCheck,
   Home, FileText, Heart, CheckCircle2,
@@ -74,6 +75,11 @@ const additionalPrograms = [
 const Services = () => {
   return (
     <Layout>
+      <SEO
+        title="Programs & Services"
+        description="Explore Code Joy Academy programs including homeschooling support, junior coding, teen development, career tracks, and 1-on-1 tutoring."
+        path="/services"
+      />
       <section className="hero-shell py-16 md:py-24">
         <div className="container text-center">
           <h1 className="text-4xl font-extrabold md:text-5xl">Our Programs</h1>

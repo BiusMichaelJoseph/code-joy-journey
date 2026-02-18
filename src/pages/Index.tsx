@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import {
   Lightbulb,
   Award,
@@ -50,6 +51,11 @@ const testimonials = [
 const Index = () => {
   return (
     <Layout>
+      <SEO
+        title="Coding Classes for Kids, Teens & Adults"
+        description="Code Joy Academy offers project-based coding programs, homeschooling support, and mentorship for learners aged 5 to adult."
+        path="/"
+      />
       <section className="hero-shell py-20 md:py-28">
         <div className="container text-center">
           <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
