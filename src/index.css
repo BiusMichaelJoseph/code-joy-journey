@@ -92,10 +92,36 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body antialiased;
+    background-image:
+      radial-gradient(circle at 8% 8%, hsl(var(--primary) / 0.06), transparent 28%),
+      radial-gradient(circle at 92% 12%, hsl(var(--secondary) / 0.08), transparent 28%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+  }
+}
+
+@layer components {
+  .hero-shell {
+    @apply relative overflow-hidden border-b bg-gradient-to-br from-primary/10 via-background to-secondary/10;
+  }
+
+  .section-shell {
+    @apply py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold md:text-4xl;
+  }
+
+  .section-subtitle {
+    @apply mt-3 text-muted-foreground md:text-lg;
+  }
+
+  .soft-card {
+    @apply rounded-2xl border bg-card/80 shadow-sm backdrop-blur transition-all hover:-translate-y-1 hover:shadow-lg;
   }
 }

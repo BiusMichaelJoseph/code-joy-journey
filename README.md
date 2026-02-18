@@ -62,7 +62,74 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Option 1: Publish with Lovable
+
+Open your [Lovable project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click **Share -> Publish**.
+
+### Option 2: Deploy on Vercel (recommended)
+
+This project is a Vite + React app and can be deployed directly to Vercel.
+
+#### 1) Push your code to GitHub
+
+Make sure your latest branch is pushed to a GitHub repository.
+
+#### 2) Import the repo in Vercel
+
+- Go to Vercel Dashboard -> **Add New...** -> **Project**
+- Select your GitHub repository
+- Keep the detected framework as **Vite**
+
+#### 3) Confirm build settings
+
+These settings are already configured in `vercel.json`:
+
+- **Install Command:** `npm install`
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+
+#### 4) Deploy
+
+Click **Deploy**. Vercel will build and publish your site.
+
+#### 5) SPA routing support (important)
+
+This app uses React Router, so direct links like `/about` or `/services` need fallback routing.
+The `vercel.json` rewrite rule handles this by serving `index.html` for app routes.
+
+#### 6) Custom domain (optional)
+
+In Vercel, open your project -> **Settings** -> **Domains** and add your domain.
+
+#### Local production check (optional)
+
+```sh
+npm i
+npm run build
+npm run preview
+```
+
+#### If you hit `403 Forbidden` during `npm install`
+
+In some restricted/corporate environments, outbound npm registry access is blocked by proxy/security policy.
+
+Quick checks:
+
+```sh
+npm ping --registry=https://registry.npmjs.org/
+```
+
+If blocked, bypass local installs and still go live by deploying through **Vercel Git integration**:
+
+1. Push this repo to GitHub.
+2. Import it in Vercel and deploy (Vercel installs dependencies in its own build environment).
+3. Keep `vercel.json` in this repo for build + SPA routing defaults.
+
+If your local environment should allow npm, clear proxy envs before install:
+
+```sh
+env -u http_proxy -u https_proxy -u HTTP_PROXY -u HTTPS_PROXY -u npm_config_http_proxy -u npm_config_https_proxy npm i
+```
 
 ## Can I connect a custom domain to my Lovable project?
 
