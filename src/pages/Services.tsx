@@ -7,7 +7,7 @@ import {
   Home, FileText, Heart, CheckCircle2,
 } from "lucide-react";
 
-const GOOGLE_FORM_URL = "#";
+const GOOGLE_FORM_URL = "https://forms.gle/9MNzmp5XiKDK3hmJA";
 
 const programs = [
   {
@@ -74,8 +74,7 @@ const additionalPrograms = [
 const Services = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:py-24">
+      <section className="hero-shell py-16 md:py-24">
         <div className="container text-center">
           <h1 className="text-4xl font-extrabold md:text-5xl">Our Programs</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -84,16 +83,12 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Programs */}
-      <section className="py-16">
-        <div className="container space-y-16">
-          {programs.map((p, idx) => (
-            <div
-              key={p.title}
-              className={`flex flex-col gap-8 md:flex-row md:items-start ${idx % 2 === 1 ? "md:flex-row-reverse" : ""}`}
-            >
-              <div className="flex-1 space-y-4">
-                <div className="flex items-center gap-3">
+      <section className="section-shell">
+        <div className="container space-y-8">
+          {programs.map((p) => (
+            <Card key={p.title} className="soft-card border-0">
+              <CardContent className="p-6 md:p-8">
+                <div className="mb-5 flex items-center gap-3">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
                     <p.icon className="h-6 w-6 text-primary" />
                   </div>
@@ -102,55 +97,54 @@ const Services = () => {
                     <p className="text-sm font-medium text-primary">{p.ages}</p>
                   </div>
                 </div>
+
                 <p className="text-muted-foreground">{p.desc}</p>
 
-                <div>
-                  <h4 className="mb-2 font-heading font-bold">Topics Covered</h4>
-                  <ul className="space-y-1">
-                    {p.topics.map((t) => (
-                      <li key={t} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 shrink-0 text-secondary" />
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="flex flex-wrap gap-6 text-sm">
+                <div className="mt-6 grid gap-6 lg:grid-cols-2">
                   <div>
-                    <span className="font-heading font-bold">Format: </span>
-                    <span className="text-muted-foreground">{p.format}</span>
+                    <h4 className="mb-2 font-heading font-bold">Topics Covered</h4>
+                    <ul className="space-y-2">
+                      {p.topics.map((t) => (
+                        <li key={t} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <CheckCircle2 className="h-4 w-4 shrink-0 text-secondary" />
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="mb-2 font-heading font-bold">What's Included</h4>
+                    <ul className="space-y-2">
+                      {p.includes.map((inc) => (
+                        <li key={inc} className="flex items-center gap-2 text-sm text-muted-foreground">
+                          <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
+                          {inc}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-4 text-sm">
+                      <span className="font-heading font-bold">Format:</span>{" "}
+                      <span className="text-muted-foreground">{p.format}</span>
+                    </p>
                   </div>
                 </div>
 
-                <div>
-                  <h4 className="mb-2 font-heading font-bold">What's Included</h4>
-                  <ul className="space-y-1">
-                    {p.includes.map((inc) => (
-                      <li key={inc} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
-                        {inc}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Button asChild>
+                <Button className="mt-6" asChild>
                   <Link to="/enroll">Enroll in {p.title}</Link>
                 </Button>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </section>
 
-      {/* Additional */}
-      <section className="bg-muted/50 py-16">
+      <section className="section-shell bg-muted/50">
         <div className="container">
-          <h2 className="mb-8 text-center text-3xl font-extrabold">Additional Programs</h2>
-          <div className="grid gap-6 md:grid-cols-2 max-w-2xl mx-auto">
+          <h2 className="section-title mb-8 text-center">Additional Programs</h2>
+          <div className="mx-auto grid max-w-2xl gap-6 md:grid-cols-2">
             {additionalPrograms.map((p) => (
-              <Card key={p.title} className="h-full">
+              <Card key={p.title} className="soft-card h-full border-0">
                 <CardContent className="p-6">
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10">
                     <p.icon className="h-6 w-6 text-secondary" />
@@ -167,7 +161,6 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="bg-primary py-16 text-primary-foreground">
         <div className="container text-center">
           <h2 className="text-3xl font-extrabold">Not Sure Which Program Is Right?</h2>
