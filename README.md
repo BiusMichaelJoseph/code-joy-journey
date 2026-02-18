@@ -109,6 +109,28 @@ npm run build
 npm run preview
 ```
 
+#### If you hit `403 Forbidden` during `npm install`
+
+In some restricted/corporate environments, outbound npm registry access is blocked by proxy/security policy.
+
+Quick checks:
+
+```sh
+npm ping --registry=https://registry.npmjs.org/
+```
+
+If blocked, bypass local installs and still go live by deploying through **Vercel Git integration**:
+
+1. Push this repo to GitHub.
+2. Import it in Vercel and deploy (Vercel installs dependencies in its own build environment).
+3. Keep `vercel.json` in this repo for build + SPA routing defaults.
+
+If your local environment should allow npm, clear proxy envs before install:
+
+```sh
+env -u http_proxy -u https_proxy -u HTTP_PROXY -u HTTPS_PROXY -u npm_config_http_proxy -u npm_config_https_proxy npm i
+```
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
