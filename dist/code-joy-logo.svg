@@ -1,0 +1,15 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Code Joy Academy logo</title>
+  <desc id="desc">A layered blue hexagon icon above the words Code Joy Academy.</desc>
+  <rect width="512" height="512" rx="32" fill="#E8EEF9"/>
+  <g transform="translate(0,4)">
+    <polygon points="256,124 334,170 334,262 256,308 178,262 178,170" fill="#0B5BD3"/>
+    <polygon points="256,142 320,180 320,252 256,290 192,252 192,180" fill="#1694EC"/>
+    <polygon points="256,160 307,190 307,246 256,276 205,246 205,190" fill="#30B7F2"/>
+    <polygon points="256,177 293,198 293,238 256,259 219,238 219,198" fill="#85DBFF"/>
+    <polygon points="256,188 279,201 279,227 256,240 233,227 233,201" fill="#CBEAFE"/>
+    <path d="M178 262L256 216L334 262" stroke="#E8EEF9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="256" y="374" text-anchor="middle" fill="#0A3C8E" font-family="Inter, Poppins, Arial, sans-serif" font-size="64" font-weight="700">Code Joy</text>
+  <text x="256" y="420" text-anchor="middle" fill="#0A3C8E" font-family="Inter, Poppins, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="8">ACADEMY</text>
+</svg>
