@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import {
   Lightbulb,
   Award,
@@ -18,7 +19,7 @@ import {
   Quote,
 } from "lucide-react";
 
-const GOOGLE_FORM_URL = "#";
+const GOOGLE_FORM_URL = "https://forms.gle/9MNzmp5XiKDK3hmJA";
 
 const benefits = [
   { icon: Lightbulb, title: "Project-Based Learning", desc: "Students build real projects from day one" },
@@ -29,10 +30,10 @@ const benefits = [
 const courses = [
   { icon: BookOpen, title: "Homeschooling Support", ages: "Ages 5–18", desc: "CBC & Cambridge-aligned coding curriculum for homeschoolers", color: "bg-secondary/10 text-secondary" },
   { icon: Code2, title: "Junior Coders", ages: "Ages 7–10", desc: "Scratch, Blockly & logic games", color: "bg-primary/10 text-primary" },
-  { icon: Laptop, title: "Teen Developers", ages: "Ages 11–17", desc: "Python, Web Dev & Cambridge CS", color: "bg-accent/10 text-accent-foreground" },
+  { icon: Laptop, title: "Teen Developers", ages: "Ages 11–17", desc: "Python, Web Dev & Cambridge CS", color: "bg-accent/15 text-accent-foreground" },
   { icon: GraduationCap, title: "Adult & Career Track", ages: "18+", desc: "Full-stack, Data Science & AI", color: "bg-primary/10 text-primary" },
   { icon: Sparkles, title: "Holiday Bootcamps", ages: "All Ages", desc: "Intensive 1-week workshops", color: "bg-secondary/10 text-secondary" },
-  { icon: UserCheck, title: "1-on-1 Tutoring", ages: "All Ages", desc: "Personalized mentorship", color: "bg-accent/10 text-accent-foreground" },
+  { icon: UserCheck, title: "1-on-1 Tutoring", ages: "All Ages", desc: "Personalized mentorship", color: "bg-accent/15 text-accent-foreground" },
 ];
 
 const steps = [
@@ -50,12 +51,18 @@ const testimonials = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-20 md:py-28">
+      <SEO
+        title="Coding Classes for Kids, Teens & Adults"
+        description="Code Joy Academy offers project-based coding programs, homeschooling support, and mentorship for learners aged 5 to adult."
+        path="/"
+      />
+      <section className="hero-shell py-20 md:py-28">
         <div className="container text-center">
-          <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl animate-fade-in-up">
-            Unlock the Joy of Coding —{" "}
-            <span className="text-primary">From First Line to First Job</span>
+          <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold text-primary">
+            Code Joy Academy • Learn by Building
+          </span>
+          <h1 className="mx-auto mt-6 max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl">
+            Unlock the Joy of Coding — <span className="text-primary">From First Line to First Job</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
             Hands-on coding classes for kids, teens, and adults. Project-based learning, real-world skills, and a supportive community.
@@ -76,12 +83,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits */}
       <section className="border-y bg-muted/50 py-12">
-        <div className="container">
-          <div className="grid gap-8 md:grid-cols-3">
-            {benefits.map((b) => (
-              <div key={b.title} className="flex items-start gap-4 text-center md:text-left">
+        <div className="container grid gap-8 md:grid-cols-3">
+          {benefits.map((b) => (
+            <div key={b.title} className="soft-card p-5">
+              <div className="flex items-start gap-4 text-left">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
                   <b.icon className="h-6 w-6 text-primary" />
                 </div>
@@ -90,22 +96,21 @@ const Index = () => {
                   <p className="text-sm text-muted-foreground">{b.desc}</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Course Categories */}
-      <section className="py-16 md:py-24">
+      <section className="section-shell">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold md:text-4xl">Our Programs</h2>
-            <p className="mt-3 text-muted-foreground">Find the perfect coding journey for every age and skill level</p>
+            <h2 className="section-title">Our Programs</h2>
+            <p className="section-subtitle">Find the perfect coding journey for every age and skill level.</p>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {courses.map((c) => (
               <Link to="/services" key={c.title}>
-                <Card className="group h-full transition-all hover:shadow-lg hover:-translate-y-1">
+                <Card className="soft-card group h-full border-0">
                   <CardContent className="p-6">
                     <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${c.color}`}>
                       <c.icon className="h-6 w-6" />
@@ -113,7 +118,7 @@ const Index = () => {
                     <h3 className="font-heading text-lg font-bold">{c.title}</h3>
                     <p className="text-sm font-medium text-primary">{c.ages}</p>
                     <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
-                    <div className="mt-4 flex items-center text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                    <div className="mt-4 flex items-center text-sm font-medium text-primary opacity-80 transition-opacity group-hover:opacity-100">
                       Learn more <ArrowRight className="ml-1 h-4 w-4" />
                     </div>
                   </CardContent>
@@ -124,16 +129,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="bg-muted/50 py-16 md:py-24">
+      <section className="section-shell bg-muted/50">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold md:text-4xl">What People Say</h2>
-            <p className="mt-3 text-muted-foreground">Hear from our students and parents</p>
+            <h2 className="section-title">What People Say</h2>
+            <p className="section-subtitle">Hear from our students and parents.</p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
-              <Card key={t.name} className="h-full">
+              <Card key={t.name} className="soft-card h-full border-0">
                 <CardContent className="p-6">
                   <Quote className="mb-3 h-8 w-8 text-primary/30" />
                   <p className="text-muted-foreground">{t.quote}</p>
@@ -151,28 +155,28 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-16 md:py-24">
+      <section className="section-shell">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-extrabold md:text-4xl">How It Works</h2>
-            <p className="mt-3 text-muted-foreground">Getting started is easy — just 3 simple steps</p>
+            <h2 className="section-title">How It Works</h2>
+            <p className="section-subtitle">Getting started is easy — just 3 simple steps.</p>
           </div>
           <div className="grid gap-8 md:grid-cols-3">
             {steps.map((s) => (
-              <div key={s.num} className="text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-extrabold text-primary-foreground">
-                  {s.num}
-                </div>
-                <h3 className="font-heading text-xl font-bold">{s.title}</h3>
-                <p className="mt-2 text-muted-foreground">{s.desc}</p>
-              </div>
+              <Card key={s.num} className="soft-card border-0 text-center">
+                <CardContent className="p-6">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-2xl font-extrabold text-primary-foreground">
+                    {s.num}
+                  </div>
+                  <h3 className="font-heading text-xl font-bold">{s.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{s.desc}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
       <section className="bg-primary py-16 text-primary-foreground">
         <div className="container text-center">
           <h2 className="text-3xl font-extrabold md:text-4xl">Ready to Start Your Coding Journey?</h2>
