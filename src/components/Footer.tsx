@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Code2, Mail, Phone, MapPin } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,11 +9,8 @@ const Footer = () => {
         <div className="grid gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <Code2 className="h-4 w-4 text-primary-foreground" />
-              </div>
-              <span className="text-lg font-heading font-bold">Code Joy Academy</span>
+            <div className="inline-flex rounded-md bg-slate-100 p-2">
+              <BrandLogo className="h-10 w-auto" compact />
             </div>
             <p className="text-sm opacity-70">
               Making coding joyful, accessible, and career-relevant for all ages.
@@ -48,11 +46,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm opacity-70">
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 shrink-0" />
-                <span>hello@codejoyacademy.com</span>
+                <span>info@codejoyacademy.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 shrink-0" />
-                <span>+254 712 345 678</span>
+                <span>0743761460</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 shrink-0" />
